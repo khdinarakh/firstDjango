@@ -1,0 +1,24 @@
+{% extends 'main/layout.html' %}
+{% block title %} {{ title }} {% endblock %}
+
+{% block content %}
+
+
+<div class="features">
+     <h1>{{ title }}</h1>
+     <p>Windows NT — линейка операционных систем (ОС) производства корпорации Microsoft и название первых версий ОС. Windows NT. Изображение логотипа.</p>
+     <button class="btn btn-warning">About me page</button>
+     {% for el in values %}
+          <p>{{ el|upper }}</p>
+     {% endfor %}
+
+     {% for el in obj %}
+     {% filter lower%}
+          <p> {{ el }}</p>
+     {% endfilter %}
+     {% endfor %}
+
+</div>
+
+
+{% endblock %}

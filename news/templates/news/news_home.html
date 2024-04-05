@@ -1,0 +1,26 @@
+{% extends 'main/layout.html' %}
+{% block title %} News {% endblock %}
+
+{% block content %}
+
+
+<div class="features">
+    <h1>News</h1>
+    <p>Windows NT — линейка операционных систем (ОС) производства корпорации Microsoft и название первых версий ОС.
+        Windows NT. Изображение логотипа.</p>
+    <button class="btn btn-warning">About me page</button>
+    {% if news %}
+        {% for el in news %}
+            <div class="alert alert-warning">
+                <h3>{{ el.title }}</h3>
+                <p>{{ el.anons }}</p>
+                <a href="{% url 'news-detail' el.id %}" class="btn btn-warning">Read more</a>
+            </div>
+        {% endfor %}
+    {% else %}
+        <p>No published data</p>
+    {% endif %}
+</div>
+
+
+{% endblock %}
